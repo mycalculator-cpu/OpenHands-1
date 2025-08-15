@@ -183,17 +183,9 @@ jobs:
             exit 1
           fi
 
-          # Run the core tests first
+          # Run the tests with detailed output
           cd tests/e2e
-          poetry run python -m pytest test_settings.py::test_github_token_configuration test_conversation.py::test_conversation_start -v --no-header --capture=no --timeout=600
-
-          # Run the web search test only if TAVILY_API_KEY is available
-          if [ -n "$TAVILY_API_KEY" ]; then
-            echo "Running web search test with Tavily API key..."
-            poetry run python -m pytest test_web_search.py::test_web_search_current_us_president -v --no-header --capture=no --timeout=600
-          else
-            echo "Skipping web search test - TAVILY_API_KEY not available"
-          fi
+          poetry run python -m pytest test_settings.py::test_github_token_configuration test_conversation.py::test_conversation_start test_web_search.py::test_web_search_current_us_president -v --no-header --capture=no --timeout=600
 
       - name: Upload test results
         if: always()
