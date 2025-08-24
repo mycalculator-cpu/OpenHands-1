@@ -45,12 +45,22 @@ class LLMRegistry:
     def _create_new_llm(
         self, service_id: str, config: LLMConfig, with_listener: bool = True
     ) -> LLM:
-        if with_listener:
-            llm = LLM(
-                service_id=service_id, config=config, retry_listener=self.retry_listner
-            )
+        # Check if we should use Pollinations AI
+        if config.model and ('pollinations' in config.model.lower() or config.model.startswith('pollinations')):
+            from openhands.llm.pollinations import PollinationsLLM
+            if with_listener:
+                llm = PollinationsLLM(
+                    service_id=service_id, config=config, retry_listener=self.retry_listner
+                )
+            else:
+                llm = PollinationsLLM(service_id=service_id, config=config)
         else:
-            llm = LLM(service_id=service_id, config=config)
+            if with_listener:
+                llm = LLM(
+                    service_id=service_id, config=config, retry_listener=self.retry_listner
+                )
+            else:
+                llm = LLM(service_id=service_id, config=config)
         self.service_to_llm[service_id] = llm
         self.notify(RegistryEvent(llm=llm, service_id=service_id))
         return llm
