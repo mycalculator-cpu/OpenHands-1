@@ -72,8 +72,8 @@ class LLMConfig(BaseModel):
     custom_llm_provider: str | None = Field(default=None)
     max_input_tokens: int | None = Field(default=None)
     max_output_tokens: int | None = Field(default=None)
-    input_cost_per_token: float | None = Field(default=None)
-    output_cost_per_token: float | None = Field(default=None)
+    input_cost_per_token: float | None = Field(default=0.0)
+    output_cost_per_token: float | None = Field(default=0.0)
     ollama_base_url: str | None = Field(default=None)
     # This setting can be sent in each call to litellm
     drop_params: bool = Field(default=True)
