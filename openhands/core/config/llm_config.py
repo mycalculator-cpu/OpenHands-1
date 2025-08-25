@@ -47,8 +47,8 @@ class LLMConfig(BaseModel):
         seed: The seed to use for the LLM.
         safety_settings: Safety settings for models that support them (like Mistral AI and Gemini).
     """
-
-    model: str = Field(default='claude-sonnet-4-20250514')
+    
+    model: str = Field(default='qwen-coder')
     api_key: SecretStr | None = Field(default=None)
     base_url: str | None = Field(default=None)
     api_version: str | None = Field(default=None)
