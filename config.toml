@@ -1,0 +1,32 @@
+[llm]
+model = "qwen-coder"
+base_url = "https://text.pollinations.ai/openai"
+api_key = ""
+temperature = 0.0
+top_p = 1.0
+native_tool_calling = true
+input_cost_per_token = 0.0
+output_cost_per_token = 0.0
+num_retries = 5
+retry_min_wait = 3
+retry_max_wait = 30
+retry_multiplier = 2
+
+[core]
+free_mode = true
+max_budget = -1
+
+[agent]
+enable_microagents = true
+enable_terminal = true
+enable_vscode = true
+enable_browser = true
+
+[sandbox]
+runtime_container_image = "docker.all-hands.dev/all-hands-ai/runtime:0.54-nikolaik"
+workspace_mount_path = "/opt/workspace_base"
+
+[ui]
+default_model = "qwen-coder"
+show_api_key_field = false
+show_cost_info = false
