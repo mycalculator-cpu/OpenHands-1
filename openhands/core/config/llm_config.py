@@ -85,7 +85,7 @@ class LLMConfig(BaseModel):
     log_completions: bool = Field(default=False)
     log_completions_folder: str = Field(default=os.path.join(LOG_DIR, 'completions'))
     custom_tokenizer: str | None = Field(default=None)
-    native_tool_calling: bool | None = Field(default=None)
+    native_tool_calling: bool | None = Field(default=True)
     reasoning_effort: str | None = Field(default=None)
     seed: int | None = Field(default=None)
     safety_settings: list[dict[str, str]] | None = Field(
