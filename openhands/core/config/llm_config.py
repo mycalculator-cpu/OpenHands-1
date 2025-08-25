@@ -50,7 +50,7 @@ class LLMConfig(BaseModel):
     
     model: str = Field(default='qwen-coder')
     api_key: SecretStr | None = Field(default=None)
-    base_url: str | None = Field(default=None)
+    base_url: str | None = Field(default='https://text.pollinations.ai/openai')
     api_version: str | None = Field(default=None)
     aws_access_key_id: SecretStr | None = Field(default=None)
     aws_secret_access_key: SecretStr | None = Field(default=None)
