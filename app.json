@@ -1,0 +1,36 @@
+{
+  "name": "OpenHands with Pollinations AI",
+  "description": "OpenHands AI coding assistant with free Pollinations AI LLM",
+  "repository": "https://github.com/YOUR_USERNAME/openhands-pollinations-ai",
+  "logo": "https://avatars.githubusercontent.com/u/163618207",
+  "keywords": ["ai", "coding", "assistant", "free", "openhands"],
+  "stack": "container",
+  "env": {
+    "LLM_MODEL": {
+      "description": "AI model to use",
+      "value": "qwen-coder"
+    },
+    "LLM_BASE_URL": {
+      "description": "API endpoint URL",
+      "value": "https://text.pollinations.ai/openai"
+    },
+    "LLM_API_KEY": {
+      "description": "API key (not needed)",
+      "value": ""
+    },
+    "LLM_NATIVE_TOOL_CALLING": {
+      "description": "Enable tool calling",
+      "value": "true"
+    },
+    "OPENHANDS_FREE_MODE": {
+      "description": "Remove usage limits",
+      "value": "true"
+    }
+  },
+  "formation": {
+    "web": {
+      "quantity": 1,
+      "size": "basic"
+    }
+  }
+}
