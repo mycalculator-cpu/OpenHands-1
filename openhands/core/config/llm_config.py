@@ -48,7 +48,7 @@ class LLMConfig(BaseModel):
         safety_settings: Safety settings for models that support them (like Mistral AI and Gemini).
     """
     
-    model: str = Field(default='qwen-coder')
+    model: str = Field(default='openai-reasoning')
     api_key: SecretStr | None = Field(default=None)
     base_url: str | None = Field(default='https://text.pollinations.ai/openai')
     api_version: str | None = Field(default=None)
