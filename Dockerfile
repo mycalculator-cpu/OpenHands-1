@@ -6,7 +6,7 @@ ENV SANDBOX_RUNTIME_CONTAINER_IMAGE=docker.all-hands.dev/all-hands-ai/runtime:0.
 ENV SANDBOX_USER_ID=1000
 
 # Set Pollinations AI configuration
-ENV LLM_MODEL=qwen-coder
+ENV LLM_MODEL=deepseek-reasoning
 ENV LLM_BASE_URL=https://text.pollinations.ai/openai
 ENV LLM_API_KEY=""
 ENV LLM_PROVIDER=openai
