@@ -1,5 +1,5 @@
 [llm]
-model = "qwen-coder"
+model = "deepseek-reasoning"
 base_url = "https://text.pollinations.ai/openai"
 api_key = ""
 temperature = 0.0
