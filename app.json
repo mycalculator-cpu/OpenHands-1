@@ -8,7 +8,7 @@
   "env": {
     "LLM_MODEL": {
       "description": "AI model to use",
-      "value": "qwen-coder"
+      "value": "deepseek-reasoning"
     },
     "LLM_BASE_URL": {
       "description": "API endpoint URL",
