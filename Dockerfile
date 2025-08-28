@@ -26,3 +26,8 @@ EXPOSE 3000
 
 # Start OpenHands server with correct binding
 CMD ["python", "/app/openhands/server/listen.py", "--host", "0.0.0.0", "--port", "3000"]
+
+# --- ADDED SECTION BELOW ---
+# Prevent container from exiting immediately if CMD crashes
+# Keeps the container alive for Sliplane PaaS
+ENTRYPOINT ["/bin/sh", "-c", "trap : TERM INT; (while true; do sleep 1000; done) & exec \"$@\"", "--"]
