@@ -1,0 +1,16 @@
+version: '2'
+
+services:
+  openhands:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      - LLM_MODEL=openai-reasoning
+      - LLM_BASE_URL=https://text.pollinations.ai/openai
+      - LLM_API_KEY=dummy
+      - SANDBOX_TYPE=local
+    volumes:
+      - ./workspace:/opt/openhands/workspace
+    stdin_open: true
+    tty: true
